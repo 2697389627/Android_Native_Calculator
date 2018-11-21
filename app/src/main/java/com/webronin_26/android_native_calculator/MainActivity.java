@@ -3,6 +3,7 @@ package com.webronin_26.android_native_calculator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatTextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
+        super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
 
         ButterKnife.bind( this );
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt00 )
     public void bt00Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "0" );
 
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt01 )
     public void bt01Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "1" );
 
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt02 )
     public void bt02Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "2" );
 
@@ -145,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt03 )
     public void bt03Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "3" );
 
@@ -160,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt04 )
     public void bt04Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "4" );
 
@@ -175,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt05 )
     public void bt05Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "5" );
 
@@ -190,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt06 )
     public void bt06Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "6" );
 
@@ -205,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt07 )
     public void bt07Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "7" );
 
@@ -220,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt08 )
     public void bt08Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "8" );
 
@@ -235,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.bt09 )
     public void bt09Click(){
 
-        if( switchTarget ){
+        if( !switchTarget ){
 
             firstStringCalculate( "9" );
 
@@ -248,82 +249,134 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick( R.id.bt_divided )
-    public void bt_dividedClick(){
+    public void bt_dividedClick() {
 
-        switchTarget = true;
+        if( secondNumberStringBuilder.length() > 0 ) {
 
-        currentOperator = DIVIDE;
+            // do nothing
+
+        }else {
+
+            if( firstNumberStringBuilder.length() > 0 ) {
+
+                switchTarget = true;
+
+                currentOperator = DIVIDE;
+
+            }
+
+        }
 
     }
 
     @OnClick( R.id.bt_minus )
     public void bt_minusClick(){
 
-        switchTarget = true;
+        if( secondNumberStringBuilder.length() > 0 ) {
 
-        currentOperator = MINUS;
+            // do nothing
+
+        }else {
+
+            if( firstNumberStringBuilder.length() > 0 ) {
+
+                switchTarget = true;
+
+                currentOperator = MINUS;
+
+            }
+
+        }
 
     }
 
     @OnClick( R.id.bt_multiplied )
     public void bt_multipliedClick(){
 
-        switchTarget = true;
+        if( secondNumberStringBuilder.length() > 0 ) {
 
-        currentOperator = MULTIPLIED;
+            // do nothing
+
+        }else {
+
+            if( firstNumberStringBuilder.length() > 0 ) {
+
+                switchTarget = true;
+
+                currentOperator = MULTIPLIED;
+
+            }
+
+        }
 
     }
 
     @OnClick( R.id.bt_pluse )
     public void bt_pluseClick(){
 
-        switchTarget = true;
+        if( secondNumberStringBuilder.length() > 0 ) {
 
-        currentOperator = PLUS;
+            // do nothing
+
+        }else {
+
+            if( firstNumberStringBuilder.length() > 0 ) {
+
+                switchTarget = true;
+
+                currentOperator = PLUS;
+
+            }
+
+        }
 
     }
 
     @OnClick( R.id.bt_equals )
     public void bt_equalsClick(){
 
-        switch ( currentOperator ){
+        if( firstNumberStringBuilder.length() > 0 && secondNumberStringBuilder.length() > 0 ) {
 
-            case PLUS:
-                result = plusIntFromJNI(
-                        Integer.parseInt( firstNumberStringBuilder.toString() )
-                        , Integer.parseInt( secondNumberStringBuilder.toString() ));
-                break;
+            switch ( currentOperator ) {
 
-            case MINUS:
-                result = minusIntFromJNI(
-                        Integer.parseInt( firstNumberStringBuilder.toString() )
-                        , Integer.parseInt( secondNumberStringBuilder.toString() ));
-                break;
+                case PLUS:
+                    result = plusIntFromJNI(
+                            Integer.parseInt( firstNumberStringBuilder.toString() )
+                            , Integer.parseInt( secondNumberStringBuilder.toString() ));
+                    break;
 
-            case MULTIPLIED:
-                result = multipliedIntFromJNI(
-                        Integer.parseInt( firstNumberStringBuilder.toString() )
-                        , Integer.parseInt( secondNumberStringBuilder.toString() ));
-                break;
+                case MINUS:
+                    result = minusIntFromJNI(
+                            Integer.parseInt( firstNumberStringBuilder.toString() )
+                            , Integer.parseInt( secondNumberStringBuilder.toString() ));
+                    break;
 
-            case DIVIDE:
-                result = dividedIntFromJNI(
-                        Integer.parseInt( firstNumberStringBuilder.toString() )
-                        , Integer.parseInt( secondNumberStringBuilder.toString() ));
+                case MULTIPLIED:
+                    result = multipliedIntFromJNI(
+                            Integer.parseInt( firstNumberStringBuilder.toString() )
+                            , Integer.parseInt( secondNumberStringBuilder.toString() ));
+                    break;
+
+                case DIVIDE:
+                    result = dividedIntFromJNI(
+                            Integer.parseInt( firstNumberStringBuilder.toString() )
+                            , Integer.parseInt( secondNumberStringBuilder.toString() ));
+
+            }
+
+            showOnTextView( result + "" );
+
+            result = 0L;
+
+            switchTarget = false;
+
+            currentOperator = 0;
+
+            firstNumberStringBuilder.setLength( 0 );
+
+            secondNumberStringBuilder.setLength( 0 );
 
         }
-
-        showOnTextView( result + "" );
-
-        result = 0L;
-
-        switchTarget = false;
-
-        currentOperator = 0;
-
-        firstNumberStringBuilder.setLength( 0 );
-
-        secondNumberStringBuilder.setLength( 0 );
 
     }
 
