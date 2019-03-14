@@ -7,8 +7,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="#000000"
-    >
+    android:background="#000000">
 
     <android.support.v7.widget.AppCompatTextView
         android:layout_width="match_parent"
@@ -17,62 +16,54 @@
         android:id="@+id/textView"
         android:gravity="end|center_vertical"
         app:autoSizeTextType="uniform"
-        android:textColor="#FFFFFF"
-        />
+        android:textColor="#FFFFFF"/>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
-        >
+        android:layout_weight="7">
 
         <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.25"
-        android:id="@+id/gv25"
-        />
+        android:id="@+id/gv25"/>
 
         <android.support.constraint.Guideline
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.5"
-            android:id="@+id/gv50"
-            />
+            android:id="@+id/gv50"/>
 
         <android.support.constraint.Guideline
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.75"
-            android:id="@+id/gv75"
-            />
+            android:id="@+id/gv75"/>
 
         <android.support.constraint.Guideline
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.25"
-            android:id="@+id/gh25"
-            />
+            android:id="@+id/gh25"/>
 
         <android.support.constraint.Guideline
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.5"
-            android:id="@+id/gh50"
-            />
+            android:id="@+id/gh50"/>
 
         <android.support.constraint.Guideline
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.75"
-            android:id="@+id/gh75"
-            />
+            android:id="@+id/gh75"/>
 
         <Button
             android:layout_width="0dp"
@@ -82,8 +73,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv25"
             app:layout_constraintBottom_toTopOf="@id/gh25"
             android:text="1"
-            android:id="@+id/bt01"
-            />
+            android:id="@+id/bt01"/>
 
         <Button
             android:layout_width="0dp"
@@ -93,8 +83,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv50"
             app:layout_constraintBottom_toTopOf="@id/gh25"
             android:text="2"
-            android:id="@+id/bt02"
-            />
+            android:id="@+id/bt02"/>
 
         <Button
             android:layout_width="0dp"
@@ -104,8 +93,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv75"
             app:layout_constraintBottom_toTopOf="@id/gh25"
             android:text="3"
-            android:id="@+id/bt03"
-            />
+            android:id="@+id/bt03"/>
 
         <Button
             android:layout_width="0dp"
@@ -117,8 +105,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/gh25"
             android:text="+"
-            android:id="@+id/bt_pluse"
-            />
+            android:id="@+id/bt_pluse"/>
 
         <Button
             android:layout_width="0dp"
@@ -128,8 +115,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv25"
             app:layout_constraintBottom_toTopOf="@id/gh50"
             android:text="4"
-            android:id="@+id/bt04"
-            />
+            android:id="@+id/bt04"/>
 
         <Button
             android:layout_width="0dp"
@@ -139,8 +125,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv50"
             app:layout_constraintBottom_toTopOf="@id/gh50"
             android:text="5"
-            android:id="@+id/bt05"
-            />
+            android:id="@+id/bt05"/>
 
         <Button
             android:layout_width="0dp"
@@ -150,8 +135,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv75"
             app:layout_constraintBottom_toTopOf="@id/gh50"
             android:text="6"
-            android:id="@+id/bt06"
-            />
+            android:id="@+id/bt06"/>
 
         <Button
             android:layout_width="0dp"
@@ -163,8 +147,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/gh50"
             android:text="-"
-            android:id="@+id/bt_minus"
-            />
+            android:id="@+id/bt_minus"/>
 
         <Button
             android:layout_width="0dp"
@@ -174,8 +157,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv25"
             app:layout_constraintBottom_toTopOf="@id/gh75"
             android:text="7"
-            android:id="@+id/bt07"
-            />
+            android:id="@+id/bt07"/>
 
         <Button
             android:layout_width="0dp"
@@ -185,8 +167,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv50"
             app:layout_constraintBottom_toTopOf="@id/gh75"
             android:text="8"
-            android:id="@+id/bt08"
-            />
+            android:id="@+id/bt08"/>
 
         <Button
             android:layout_width="0dp"
@@ -196,8 +177,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv75"
             app:layout_constraintBottom_toTopOf="@id/gh75"
             android:text="9"
-            android:id="@+id/bt09"
-            />
+            android:id="@+id/bt09"/>
 
         <Button
             android:layout_width="0dp"
@@ -209,8 +189,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/gh75"
             android:text="x"
-            android:id="@+id/bt_multiplied"
-            />
+            android:id="@+id/bt_multiplied"/>
 
         <Button
             android:layout_width="0dp"
@@ -220,8 +199,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv25"
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="0"
-            android:id="@+id/bt00"
-            />
+            android:id="@+id/bt00"/>
 
         <Button
             android:layout_width="0dp"
@@ -233,8 +211,7 @@
             app:layout_constraintEnd_toStartOf="@id/gv75"
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="="
-            android:id="@+id/bt_equals"
-            />
+            android:id="@+id/bt_equals"/>
 
         <Button
             android:layout_width="0dp"
@@ -246,8 +223,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="%"
-            android:id="@+id/bt_divided"
-            />
+            android:id="@+id/bt_divided"/>
 
     </android.support.constraint.ConstraintLayout>
 
